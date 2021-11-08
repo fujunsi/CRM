@@ -1,0 +1,23 @@
+drop table if exists t_user;
+
+create table t_user(
+	id char(32) not null COMMENT,
+	loginAct varchar(255),
+	name varchar(255),
+	loginPwd varchar(255) comment,
+	email varchar(255),
+	expireTime char(19) comment,
+	lockState char(1) comment,
+	deptno char(4),
+	allowIps varchar(255) comment,
+	createTime char(19),
+	createBy varchar(255),
+	editTime char(19),
+	editBy varchar(255),
+	primary key(id)
+);
+
+
+       String createTime = DateTimeUtil.getSysTime();
+
+       String createBy = ((User) request.getSession().getAttribute("user")).getName();
